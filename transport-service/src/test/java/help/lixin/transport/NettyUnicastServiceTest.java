@@ -25,10 +25,13 @@ public class NettyUnicastServiceTest {
 
     @Test
     public void testUnicast() throws Exception {
+        // 注册处理器
         service1.addListener("test", (address, payload) -> {
             assertEquals(address2, address);
             assertArrayEquals("Hello world!".getBytes(), payload);
         });
+
+        // 1026 -> 1025 发送消息
         service2.unicast(address1, "test", "Hello world!".getBytes());
         TimeUnit.SECONDS.sleep(5);
     }
