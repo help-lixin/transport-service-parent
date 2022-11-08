@@ -31,8 +31,13 @@ import java.util.function.BiConsumer;
 
 public class NettyUnicastService implements ManagedUnicastService {
     private static final Logger LOGGER = LoggerFactory.getLogger(NettyUnicastService.class);
-    private static final Serializer SERIALIZER = Serializer.using(new Namespace.Builder().register(Namespaces.BASIC).nextId(Namespaces.BEGIN_USER_CUSTOM_ID).register(Message.class).register(new AddressSerializer(), Address.class).build());
-
+    private static final Serializer SERIALIZER = Serializer.using(
+            new Namespace.Builder()
+                    .register(Namespaces.BASIC)
+                    .nextId(Namespaces.BEGIN_USER_CUSTOM_ID)
+                    .register(Message.class)
+                    .register(new AddressSerializer(), Address.class)
+                    .build());
     private final Logger log = LoggerFactory.getLogger(getClass());
 
     private final Address address;
@@ -178,7 +183,6 @@ public class NettyUnicastService implements ManagedUnicastService {
             channel = null;
             return future;
         }
-
         return CompletableFuture.completedFuture(null);
     }
 
