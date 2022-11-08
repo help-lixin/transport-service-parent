@@ -12,8 +12,9 @@ import java.util.concurrent.CompletableFuture;
 public class NettyMessagingServiceCompressionTest {
     @Test
     public void shouldSendAndReceiveMessage() {
-        final var config = new MessagingConfig().setShutdownQuietPeriod(Duration.ofMillis(50)).setCompressionAlgorithm(MessagingConfig.CompressionAlgorithm.GZIP.NONE);
-
+        final var config = new MessagingConfig()
+                .setShutdownQuietPeriod(Duration.ofMillis(50))
+                .setCompressionAlgorithm(MessagingConfig.CompressionAlgorithm.GZIP.NONE);
         final var senderAddress = Address.from("127.0.0.1:1025");
         final var senderNetty = (MessagingService) new NettyMessagingService("test", senderAddress, config).start().join();
 

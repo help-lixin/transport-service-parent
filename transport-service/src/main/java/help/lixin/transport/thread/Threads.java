@@ -1,7 +1,6 @@
 package help.lixin.transport.thread;
 
 import com.google.common.util.concurrent.ThreadFactoryBuilder;
-import help.lixin.transport.thread.TransportThreadFactory;
 import org.slf4j.Logger;
 
 import java.util.concurrent.ThreadFactory;
