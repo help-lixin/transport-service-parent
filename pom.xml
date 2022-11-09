@@ -19,6 +19,7 @@
 
     <modules>
         <module>transport-service</module>
+        <module>gossip-service</module>
     </modules>
 
     <dependencyManagement>
