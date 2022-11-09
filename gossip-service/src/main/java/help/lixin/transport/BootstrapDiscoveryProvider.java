@@ -160,8 +160,11 @@ public class BootstrapDiscoveryProvider
    * Sends a heartbeat to the given peer.
    */
   private CompletableFuture<Void> sendHeartbeat(Node localNode, Address address) {
-    return bootstrap.getMessagingService().sendAndReceive(address, HEARTBEAT_MESSAGE, SERIALIZER.encode(localNode)).whenCompleteAsync((response, error) -> {
+    return bootstrap.getMessagingService()
+            .sendAndReceive(address, HEARTBEAT_MESSAGE, SERIALIZER.encode(localNode))
+            .whenCompleteAsync((response, error) -> {
               if (error == null) {
+                // 解码返回的结果
                 Collection<Node> nodes = SERIALIZER.decode(response);
                 for (Node node : nodes) {
                   if (node.address().equals(address)) {
