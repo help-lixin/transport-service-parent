@@ -29,7 +29,7 @@ import java.util.concurrent.Executor;
 import java.util.concurrent.atomic.AtomicBoolean;
 import java.util.function.BiConsumer;
 
-public class NettyUnicastService implements ManagedUnicastService {
+public class NettyUnicastService implements UnicastService {
     private static final Logger LOGGER = LoggerFactory.getLogger(NettyUnicastService.class);
     private static final Serializer SERIALIZER = Serializer.using(
             new Namespace.Builder()

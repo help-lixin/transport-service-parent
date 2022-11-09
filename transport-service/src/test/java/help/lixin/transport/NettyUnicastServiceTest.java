@@ -17,8 +17,8 @@ public class NettyUnicastServiceTest {
 
     private static final Logger LOGGER = getLogger(NettyUnicastServiceTest.class);
 
-    ManagedUnicastService service1;
-    ManagedUnicastService service2;
+    UnicastService service1;
+    UnicastService service2;
 
     Address address1;
     Address address2;

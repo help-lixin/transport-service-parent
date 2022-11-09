@@ -3,10 +3,17 @@ package help.lixin.transport;
 import com.google.common.util.concurrent.MoreExecutors;
 import help.lixin.transport.util.Address;
 
+import java.util.concurrent.CompletableFuture;
 import java.util.concurrent.Executor;
 import java.util.function.BiConsumer;
 
 public interface UnicastService {
+
+    CompletableFuture<UnicastService> start();
+
+    boolean isRunning();
+
+    CompletableFuture<Void> stop();
 
     void unicast(Address address, String subject, byte[] message);
 
