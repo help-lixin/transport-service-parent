@@ -23,7 +23,6 @@ import help.lixin.transport.serializer.Namespace;
 import help.lixin.transport.serializer.Namespaces;
 import help.lixin.transport.serializer.Serializer;
 import help.lixin.transport.util.Address;
-import help.lixin.transport.util.PhiAccrualFailureDetector;
 import help.lixin.transport.util.Version;
 import org.slf4j.Logger;
 

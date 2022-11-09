@@ -16,7 +16,6 @@ import help.lixin.transport.util.Address;
 
 import  static help.lixin.transport.thread.Threads.namedThreads;
 
-import help.lixin.transport.util.PhiAccrualFailureDetector;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
