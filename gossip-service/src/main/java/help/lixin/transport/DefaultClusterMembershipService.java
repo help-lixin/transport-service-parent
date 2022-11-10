@@ -256,6 +256,7 @@ public class DefaultClusterMembershipService
     public CompletableFuture<ClusterMembershipService> start() {
         if (started.compareAndSet(false, true)) {
             discoveryService.addListener(discoveryEventListener);
+
             return discoveryService.start().thenRun(() -> {
                 LOGGER.info("{} - Member activated: {}", localMember.id(), localMember);
                 localMember.setActive(true);
